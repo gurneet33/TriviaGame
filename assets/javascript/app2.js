@@ -1,34 +1,7 @@
 
 var correct = 0;
 var animating;
-var userAnswer1 = $('input[name=question1]:checked').attr('value'); 
-var userAnswer2 = $('input[name=question2]:checked').attr('value'); 
-var userAnswer3 = $('input[name=question3]:checked').attr('value'); 
-
-function initialize(){
-	
-	userAnswer =  $("input:checked").val();
-	console.log($("input:checked").val() + " is checked");
-}
-
-$(".btn").on("click", function(event){
-	initialize();
-	if($("input:checked").hasClass("tag")){
-		console.log("right");
-		correct++;
-		console.log(correct);
-		$("#after_submit").html('<b>' + "Correct answer" + '</b>');
-		}
-	
-		else
-		{
-			$('#after_submit').html(userAnswer + " Is Wrong answer " +"<br/>Correct answer is:<br> <b>Ottawa</b>");
-		}
-		event.stopImmediatePropagation;
-		initialize();
-});
-
-$(".next").on("click", function(){
+$(".next").click(function(){
     if(animating) return false;
 	animating = true;
 	
@@ -67,9 +40,8 @@ $(".next").on("click", function(){
 });
 });
 // $('#button').click(function() {
-     
-//     if(('input[type=radio]:checked').hasClass("tag")){
-// 		console.log("getting there")
+//     var userAnswer1 = $('input[name=question1]:checked').attr('value'); 
+//     if(userAnswer1==="Ottawa"){
 //         correct++;
 //     $('div').html('<b>' + "Correct answer" + '</b>');
 //     }

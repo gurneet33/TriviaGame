@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia-Quiz</title>
 
-     <!--CSS style sheet -->
-     <link rel="stylesheet" href="./assets/css/style.css">
-     <!-- jquery-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--CSS style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
-    <form id="quiz" name="quiz"></form>
-    <p> What is the Capital of Canada</p>
-    <input type="radio" class="mc" name="question1" value="Toronto">Toronto<br>
-    <input type="radio" class="mc" name="question1" value="Ottawa">Ottawa<br>
-    <input type="radio" class="mc" name="question1" value="Winnipeg">Winnipeg<br>
-    <input type="radio" class="mc" name="question1" value="Montreal">Montreal<br>
 
-    <input id="button" type="button" value="submit">
-    
-    <div id="after_submit"></div>
+<body>
+    <!--multistep-form-->
+    <form id="quiz" name="quiz">
+
+        <!--Progress Bar-->
+        <ul id="progressbar">
+            <li class="active">Q1</li>
+            <li>Q2</li>
+            <li>Q3</li>
+            <!-- <li>Q4</li>
+            <li>Q5</li> -->
+        </ul>
+        <!--fieldsets-->
+        <fieldset id="q1field">
+            <h2 class="fs-title"> What is the Capital of Canada</h2>
+        <div class="container">
+            <input type="radio" class="mc" name="question1" value="Toronto">Toronto<br>
+            <input type="radio" class="mc tag" name="question1" value="Ottawa">Ottawa<br>
+            <input type="radio" class="mc" name="question1" value="Winnipeg">Winnipeg<br>
+            <input type="radio" class="mc" name="question1" value="Montreal">Montreal<br>
+        </div>
+            <input id="button" type="button" class="btn action-button" value="submit">
+            <div id="after_submit"></div>
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+        <fieldset id="q2field">
+                <h2 class="fs-title"> What is the Capital of India</h2>
+            <div class="container">
+                <input type="radio" class="mc" name="question2" value="Mumbai">Mumbai<br>
+                <input type="radio" class="mc" name="question2" value="Calcutta">Calcutta<br>
+                <input type="radio" class="mc" name="question2" value="Jaipur">Jaipur<br>
+                <input type="radio" class="mc tag" name="question2" value="Delhi">Delhi<br>
+            </div>
+            <input id="button" type="button" class="btn action-button" value="submit">
+                <div id="after_submit"></div>
+                <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+        <fieldset id="q3field">
+                <h2 class="fs-title"> What is the Capital of USA</h2>
+            <div class="container">
+                <input type="radio" class="mc tag" name="question3" value="WashingtonDC">WashingtonDC<br>
+                <input type="radio" class="mc" name="question3" value="Newyork">Newyork<br>
+                <input type="radio" class="mc" name="question3" value="California">California<br>
+                <input type="radio" class="mc" name="question3" value="Orlando">Orlando<br>
+            </div>
+                <input id="button" type="button" class="action-button" value="submit">
+                <div id="after_submit"></div>
+                <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+    </form>
     <!-- Script -->
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>
+
 </html>
