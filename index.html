@@ -15,31 +15,28 @@
 
 <body>
     <!--multistep-form-->
+    <h1>The Solar System Quiz</h1>
+    
     <form id="quiz" name="quiz">
-
-        <!--Progress Bar-->
-        <ul id="progressbar">
-            <li class="active">Q1</li>
-            <li>Q2</li>
-            <li>Q3</li>
-            <li>Q4</li>
-        </ul>
+           
+        <input type="button" name="Start" class="start action-button" value="Start" />
+       
         <div id="timer"></div>
         <!--fieldsets-->
-        <div class="q1field active">
+        <div class="field q1field active">
             <h2 class="fs-title"> What is the Capital of Canada</h2>
         <div class="container">
-            <input type="radio" class="mc" name="question1" value="Toronto">Toronto<br>
-            <input type="radio" class="tag" name="right" value="Ottawa">Ottawa<br>
-            <input type="radio" class="mc" name="question1" value="Winnipeg">Winnipeg<br>
-            <input type="radio" class="mc" name="question1" value="Montreal">Montreal<br>
+            <input type="radio" class="mc" name="question1" value="Toronto"> Toronto<br>
+            <input type="radio" class="tag" name="right" value="Ottawa"> Ottawa<br>
+            <input type="radio" class="mc" name="question1" value="Winnipeg"> Winnipeg<br>
+            <input type="radio" class="mc" name="question1" value="Montreal"> Montreal<br>
         </div>
             <input id="button" type="button" class="btn action-button" value="submit">
-            <div id="after_submit"></div>
+           
             <input type="button" name="next" class="next action-button" value="Next" />
     </div>
 
-        <div class="q2field">
+        <div class="field q2field">
                 <h2 class="fs-title"> What is the Capital of India</h2>
             <div class="container">
                 <input type="radio" class="mc" name="question2" value="Mumbai">Mumbai<br>
@@ -48,11 +45,11 @@
                 <input type="radio" class="tag" name="right" value="Delhi">Delhi<br>
             </div>
             <input id="button" type="button" class="btn action-button" value="submit">
-                <div id="after_submit"></div>
+               
                 <input type="button" name="next" class="next action-button" value="Next" />
         </div>
 
-        <div class="q3field">
+        <div class="field q3field">
                 <h2 class="fs-title"> What is the Capital of USA</h2>
             <div class="container">
                 <input type="radio" class="tag" name="right" value="WashingtonDC">WashingtonDC<br>
@@ -61,11 +58,11 @@
                 <input type="radio" class="mc" name="question3" value="Orlando">Orlando<br>
             </div>
                 <input id="button" type="button" class="btn action-button" value="submit">
-                <div id="after_submit"></div>
+               
                 <input type="button" name="next" class="next action-button" value="Next" />
         </div>
 
-        <div class="q4field">
+        <div class="field q4field">
             <h2 class="fs-title"> What is the Capital of France</h2>
         <div class="container">
             <input type="radio" class="mc" name="question4" value="Amsterdam">Amsterdam<br>
@@ -74,11 +71,19 @@
             <input type="radio" class="mc" name="question4" value="Rome">Rome<br>
         </div>
             <input id="button" type="button" class="btn action-button" value="submit">
-            <div id="after_submit"></div>
+           
             <input type="button" name="next" class="next action-button" value="Next" />
     </div>
-
+        <!--Progress Bar-->
+    <ul id="progressbar">
+            <li><span id="firstQ">Q1</span></li>
+            <li><span id="secondQ">Q2</span></li>
+            <li><span id="thirdQ">Q3</span></li>
+            <li><span id="fourthQ">Q4</span></li>
+        </ul>
+    
     </form>
+    <div class="victory" ></div>
     <!-- Script -->
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>

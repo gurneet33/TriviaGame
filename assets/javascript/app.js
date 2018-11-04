@@ -5,7 +5,7 @@ var useruserAnswer;
 var correctAnswer;
 var time = 20;
 var qClass;
-$newDiv = $('<div>');
+$newDiv = $('<div>', { 'class': 'displayDiv' })
 
 $(function() {
 
@@ -30,8 +30,9 @@ function decrement(){
     time--;
     $("#timer").html(time);
     if(time<=0){
-        alert("end game");
-        clearInterval(setTime);
+		clearInterval(setTime);
+		$("form").css("display","none");
+		$newDiv.html("Game Over"+"<br> Your Score is<br>"+correct);
     }
 }
     // to input values when the user clicks on the radio button
@@ -46,9 +47,12 @@ $("input[type='radio']").on("click", function(e){
 })
 
     //when start Game is pressed
-$("ul").on("click", function(){
+$(".start").on("click", function(){
     setTime= setInterval(decrement,1000);
-        $(".q1field").css("display", "block");
+		$(".q1field").css("display", "block");
+		$("#firstQ").addClass("onQuestion");
+		$("#progressbar").css("display", "block");
+		$(".start").css("display", "none");
 });
 
     //when submit button is clicked
@@ -59,7 +63,9 @@ $(".btn").on("click", function(){
             console.log("correct");
             correct++;
             console.log(correct);
-            $newDiv.html('<b>' + "Correct answer" + '</b>');
+			$newDiv.html('<b>' + "Correct answer" + '</b>');
+			$(".victory").css({"width":(correct*20), "display":"block" }) 
+			
             }
 	    else
 		{
@@ -78,18 +84,30 @@ $(".next").on("click", function(){
         $(".q2field").css("display", "block"); 
 
         $(".q1field").removeClass("active");
-        $(".q2field").addClass("active");
+		$(".q2field").addClass("active");
+		$("#firstQ").removeClass("onQuestion");
+        $("#secondQ").addClass("onQuestion");
          }
     else if(operand===2){
         $(".q1field").css("display", "none");
         $(".q2field").css("display", "none"); 
-        $(".q3field").css("display", "block");
+		$(".q3field").css("display", "block");
+		
+		$(".q2field").removeClass("active");
+		$(".q3field").addClass("active");
+		$("#secondQ").removeClass("onQuestion");
+        $("#thirdQ").addClass("onQuestion");
     }    
     else if(operand===3){
         $(".q1field").css("display", "none");
         $(".q2field").css("display", "none"); 
         $(".q3field").css("display", "none");
-        $(".q4field").css("display", "block");
+		$(".q4field").css("display", "block");
+		
+		$(".q3field").removeClass("active");
+		$(".q4field").addClass("active");
+		$("#thirdQ").removeClass("onQuestion");
+        $("#fourthQ").addClass("onQuestion");
     }     
   
     

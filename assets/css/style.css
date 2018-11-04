@@ -2,10 +2,22 @@
     margin: 0 auto;
     padding: 0;
 }
-html {
-    background: linear-gradient(rgba(190, 0, 200, 0.2),rgba(190, 159, 200, 0.3) )
+
+body {
+    background-image: url("../images/sky.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+    color: white;
 }
-.q1field,.q2field, .q3field, .q4field{
+
+h1 {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.q1field,.q2field,.q3field,.q4field {
     display: none;
 }
 
@@ -17,91 +29,97 @@ html {
     position: relative;
 }
 
-#quiz fieldset {
-    background: white;
+.field {
+    background: rgb(25, 25, 26);
     border: 0 none;
     border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 30px; 
+    box-shadow: 0 0 15px 1px rgba(224, 216, 216, 0.4);
+    padding: 20px 30px;
     box-sizing: border-box;
     width: 80%;
     margin: 0 10%;
     position: relative;
+    color: azure;
 }
 
-.container{
+.container {
     text-align: left;
 }
 
 /* just show the first fieldset */
-#quiz fieldset:not(:first-of-type){
+/* #quiz fieldset:not(:first-of-type){
     display: none;
-}
+} */
 #quiz .action-button {
-	width: 100px;
-	background:rgb(132, 219, 248);
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
+    width: 100px;
+    background: rgb(132, 219, 248);
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
 }
-#quiz .action-button:hover, #quiz .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
-}
+
 /* headings */
 .fs-title {
     font-size: 15px;
     text-transform: uppercase;
-    color: #2c3e50;
+    color: #a5aeb8;
     margin-bottom: 10px;
 }
 
 /* progressbar */
 #progressbar {
+    display: none;
     margin-bottom: 30px;
     overflow: hidden;
-    counter-reset: step;
+    padding-top: 5%;
 }
-#progressbar li{
+
+#progressbar li {
     list-style-type: none;
     color: white;
     text-transform: uppercase;
-    font-size: 9px;
-    width: 20%;
+    font-size: 14px;
+    width: 25%;
     float: left;
     position: relative;
+    
 }
-#progressbar li:before {
-    content: counter(step);
-    counter-increment: step;
+
+.onQuestion{
+    /* border: 2px solid lightblue; */
+    background-color: black;
+    padding: 0;
+    width: auto;
+    
+}
+
+span {
+    border: 2px solid lightblue;
+    width: 27px;
+}
+
+#timer {
+    padding-bottom:3%;
+}
+.displayDiv {
+    background: black;
+    width: 43%;
+    height: 70px;
+    text-align: center;
+    padding-top: 15px;
+}
+.victory {
+    background-color: aqua; 
     width: 20px;
-    line-height: 20px;
-    display: block;
-    font-size: 10px;
-    color: #333;
-    background: white;
-    border-radius: 3px;
-    margin: 0 auto 5px auto;
-}
-#progressbar li:after {
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: white;
-	position: absolute;
-	left: -50%;
-	top: 9px;
-    z-index: -1; 
-}
-#progressbar li:first-child:after {
-	content: none; 
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background:rgb(132, 219, 248);
-	color: white;
-}
+    height: 20px;
+    padding: 2% 0;
+    margin-bottom: 2%;
+    position: absolute;
+    top: 1%;
+    left:65%;
+    display: none;
+ }
