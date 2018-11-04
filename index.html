@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia-Quiz</title>
+    <title>Quiz</title>
 
     <!--CSS style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -25,8 +25,9 @@
             <!-- <li>Q4</li>
             <li>Q5</li> -->
         </ul>
+        <div id="timer"></div>
         <!--fieldsets-->
-        <fieldset id="q1field">
+        <div class="q1field active">
             <h2 class="fs-title"> What is the Capital of Canada</h2>
         <div class="container">
             <input type="radio" class="mc" name="question1" value="Toronto">Toronto<br>
@@ -37,9 +38,9 @@
             <input id="button" type="button" class="btn action-button" value="submit">
             <div id="after_submit"></div>
             <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
+    </div>
 
-        <fieldset id="q2field">
+        <div class="q2field">
                 <h2 class="fs-title"> What is the Capital of India</h2>
             <div class="container">
                 <input type="radio" class="mc" name="question2" value="Mumbai">Mumbai<br>
@@ -50,9 +51,9 @@
             <input id="button" type="button" class="btn action-button" value="submit">
                 <div id="after_submit"></div>
                 <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
+        </div>
 
-        <fieldset id="q3field">
+        <div class="q3field">
                 <h2 class="fs-title"> What is the Capital of USA</h2>
             <div class="container">
                 <input type="radio" class="mc tag" name="question3" value="WashingtonDC">WashingtonDC<br>
@@ -60,10 +61,23 @@
                 <input type="radio" class="mc" name="question3" value="California">California<br>
                 <input type="radio" class="mc" name="question3" value="Orlando">Orlando<br>
             </div>
-                <input id="button" type="button" class="action-button" value="submit">
+                <input id="button" type="button" class="btn action-button" value="submit">
                 <div id="after_submit"></div>
                 <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
+        </div>
+
+        <div class="q4field">
+            <h2 class="fs-title"> What is the Capital of France</h2>
+        <div class="container">
+            <input type="radio" class="mc" name="question4" value="Amsterdam">Amsterdam<br>
+            <input type="radio" class="mc" name="question4" value="Lyon">Lyon<br>
+            <input type="radio" class="mc tag" name="question4" value="Paris">Paris<br>
+            <input type="radio" class="mc" name="question4" value="Rome">Rome<br>
+        </div>
+            <input id="button" type="button" class="btn action-button" value="submit">
+            <div id="after_submit"></div>
+            <input type="button" name="next" class="next action-button" value="Next" />
+    </div>
 
     </form>
     <!-- Script -->
