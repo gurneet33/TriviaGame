@@ -1,19 +1,31 @@
 var correct = 0;
 var animating;
 var operand = 0;
-var userAnswer;
+var useruserAnswer;
+var correctAnswer;
 var time = 20;
-var Answer;
-var $select;
+var qClass;
+$newDiv = $('<div>');
 
-// function initialize(){
-// 	userAnswer = $("input:checked").attr("value");
-// 	console.log(userAnswer + " is checked");
-// }
 $(function() {
-    console.log( "ready!" );
 
+    //to generate correct answer in every form
+function coorectGen(){
+    if(operand==0){
+        correctAnswer = "Ottawa";
+    }
+    else if(operand==1){
+        correctAnswer = "Delhi";
+    }
+    else if(operand==2){
+        correctAnswer = "Washington DC";
+    }
+    else {
+        correctAnswer = "Paris";
+    }
+}
 
+    // for the timer
 function decrement(){
     time--;
     $("#timer").html(time);
@@ -22,47 +34,42 @@ function decrement(){
         clearInterval(setTime);
     }
 }
-// function radioClicked(){
-//     $("input:checked").attr("value");
-//     console.log($(this))
-// }
-function radioClicked (){
-$("input[type='radio']").on("click", function(){
-    console.log($(this));
-    Answer = $(this).attr("value"); 
-    console.log(Answer);
-     
-    
+    // to input values when the user clicks on the radio button
+$("input[type='radio']").on("click", function(e){
+    userAnswer = $(this).attr("value"); 
+    console.log("user answer is:"+ userAnswer); 
+    qClass = $(this).attr("class");
+    console.log("useranswer class is :"+ qClass);
+    coorectGen();
+    console.log("correct answer is "+correctAnswer);
+
 })
-}
 
+    //when start Game is pressed
 $("ul").on("click", function(){
-setTime= setInterval(decrement,1000);
-
-
+    setTime= setInterval(decrement,1000);
+        $(".q1field").css("display", "block");
 });
 
+    //when submit button is clicked
 $(".btn").on("click", function(){
-    radioClicked();
-    console.log(Answer);
-    // initialize();
-    // if($("input:checked").hasClass("tag")){
-	// 	console.log("right");
-	// 	correct++;
-	// 	console.log(correct);
-	// 	$("#after_submit").html('<b>' + "Correct answer" + '</b>');
-	// 	}
-	
-	// 	else
-	// 	{
-	// 		$('#after_submit').html(userAnswer + " Is Wrong answer " +"<br/>Correct answer is:<br> <b>Ottawa</b>");
-	// 	}
-	// 	event.stopImmediatePropagation;
-    //     initialize();
-        
-        
+    console.log(userAnswer);
+    $("body").append($newDiv);   
+        if(qClass==="tag"){
+            console.log("correct");
+            correct++;
+            console.log(correct);
+            $newDiv.html('<b>' + "Correct answer" + '</b>');
+            }
+	    else
+		{
+			$newDiv.html(userAnswer + " Is Wrong answer " +"<br/>Correct answer is:<br>"+ correctAnswer);
+        }
 });
+
+    //when next is pressed
 $(".next").on("click", function(){
+    $newDiv.html(" ");
     operand++;
     console.log(operand);
     console.log("clicked");

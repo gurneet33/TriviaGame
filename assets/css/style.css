@@ -5,9 +5,10 @@
 html {
     background: linear-gradient(rgba(190, 0, 200, 0.2),rgba(190, 159, 200, 0.3) )
 }
-.q2field, .q3field, .q4field{
+.q1field,.q2field, .q3field, .q4field{
     display: none;
 }
+
 
 #quiz {
     width: 400px;
