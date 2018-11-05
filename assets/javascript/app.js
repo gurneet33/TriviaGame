@@ -39,7 +39,7 @@ function decrement(){
 		$("form").css("display","none");
 		$newDiv.css("display","block");
 		$newDiv.html("Game Over"+"<br> Your Score is<br>"+correct);
-		setTimeout(reset, 2000);
+		setTimeout(reset, 2100);
     }
 }
     // to input values when the user clicks on the radio button
