@@ -14,7 +14,7 @@ h1 {
     color: white;
     margin: 0 auto;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .q1field,.q2field,.q3field,.q4field {
@@ -78,7 +78,6 @@ h1 {
     overflow: hidden;
     padding-top: 5%;
 }
-
 #progressbar li {
     list-style-type: none;
     color: white;
@@ -86,26 +85,26 @@ h1 {
     font-size: 14px;
     width: 25%;
     float: left;
-    position: relative;
-    
+    position: relative;   
 }
-
 .onQuestion{
     /* border: 2px solid lightblue; */
     background-color: black;
     padding: 0;
     width: 60px;
+    color: rgb(23, 23, 160)
     
 }
-
 span {
-    border: 2px solid lightblue;
+    border: 4px solid lightblue;
     width: 40px;
 }
+
 
 #timer {
     padding-bottom:3%;
 }
+    /* shows correct answer */
 .displayDiv {
     background: black;
     width: 43%;
@@ -113,6 +112,7 @@ span {
     text-align: center;
     padding-top: 15px;
 }
+    /* for the white and black moon wrong and right  */
 .victory,.loss {
     width: 20px;
     height: 20px;
@@ -122,6 +122,7 @@ span {
     top: 8%;
     display: none;
     text-align: center;
+    box-shadow: 0 0 15px 1px rgba(224, 216, 216, 0.4);
  }
 .victory {
     left:75%;
@@ -136,14 +137,12 @@ span {
     behavior: url(PIE.htc); 
  }
     .type1{
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
         background: rgb(238, 238, 218);
-        border: 3px solid rgb(37, 12, 12);
     }
     .type2 {
-        width: 80px;
-        height: 80px;
-        background: rgb(41, 27, 9);
-        border: 3px solid rgb(37, 12, 12);
+        width: 50px;
+        height: 50px;
+        background: rgb(27, 23, 19);
     }

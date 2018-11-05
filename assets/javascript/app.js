@@ -4,38 +4,42 @@ var animating;
 var operand = 0;
 var useruserAnswer;
 var correctAnswer;
-var time = 20;
+var time = 31;
 var qClass;
 $newDiv = $('<div>', { 'class': 'displayDiv' })
 
 $(function() {
-
+	$("*").dblclick(function(e){
+		
+			e.preventDefault();
+		
+		  });
     //to generate correct answer in every form
-function coorectGen(){
+function correctGen(){
     if(operand==0){
-        correctAnswer = "Ottawa";
+        correctAnswer = "Milky Way";
     }
     else if(operand==1){
-        correctAnswer = "Delhi";
+        correctAnswer = "Jupiter";
     }
     else if(operand==2){
-        correctAnswer = "Washington DC";
+        correctAnswer = "Gravity";
     }
     else {
-        correctAnswer = "Paris";
+        correctAnswer = "Venus";
     }
 }
 
     // for the timer
 function decrement(){
     time--;
-    $("#timer").html(time);
+    $("#timer").html(":"+time);
     if(time<=0){
 		clearInterval(setTime);
 		$("form").css("display","none");
 		$newDiv.css("display","block");
 		$newDiv.html("Game Over"+"<br> Your Score is<br>"+correct);
-		$(".start").css("display", "block");
+		setTimeout(reset, 2000);
     }
 }
     // to input values when the user clicks on the radio button
@@ -44,7 +48,7 @@ $("input[type='radio']").on("click", function(e){
     console.log("user answer is:"+ userAnswer); 
     qClass = $(this).attr("class");
     console.log("useranswer class is :"+ qClass);
-    coorectGen();
+    correctGen();
     console.log("correct answer is "+correctAnswer);
 
 })
@@ -59,7 +63,8 @@ $(".start").on("click", function(){
 });
 
     //when submit button is clicked
-$(".btn").on("click", function(){
+$(".submitBtn").one("click", function(){
+	setTimeout(nextForm, 2100);
 	$newDiv.css("display","block");
     console.log(userAnswer);
     $("body").append($newDiv);   
@@ -69,20 +74,18 @@ $(".btn").on("click", function(){
             console.log(correct);
 			$newDiv.html('<b>' + "Correct answer" + '</b>');
 			$(".victory").css({"width":(correct*20), "display":"block" }) 
-			$(".victory").html("<h3>"+correct+"<br>R"+"</h3>")
-			
+			$(".victory").html("<h3>"+correct+"<br>R"+"</h3>")	
             }
-	    else
-		{
+	    else{
 			lost++;
-			$newDiv.html(userAnswer + " Is Wrong answer " +"<br/>Correct answer is:<br>"+ correctAnswer);
+			$newDiv.html("<b>"+userAnswer+"</b>" + " is Wrong answer Correct answer is: <br>"+"<b>"+correctAnswer+"</b>");
 			$(".loss").css({"width":(lost*20), "display":"block" }) 
 			$(".loss").html("<h3>"+lost+"<br>W"+"</h3>")
-        }
+		}
 });
 
-    //when next is pressed
-$(".next").on("click", function(){
+	//To move to next question
+	function nextForm(){
     $newDiv.css("display","none");
     operand++;
     console.log(operand);
@@ -116,9 +119,11 @@ $(".next").on("click", function(){
 		$(".q4field").addClass("active");
 		$("#thirdQ").removeClass("onQuestion");
         $("#fourthQ").addClass("onQuestion");
-    }     
-  
-    
-});
+	}     
+}
+	// to start game over again
+	function reset(){
+		document.location.reload();
+	}
 
 });
