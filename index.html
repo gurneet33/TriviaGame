@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quiz</title>
-
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung" rel="stylesheet">
     <!--CSS style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- jquery-->
@@ -27,7 +28,7 @@
             <h2 class="fs-title"> What is the Capital of Canada</h2>
         <div class="container">
             <input type="radio" class="mc" name="question1" value="Toronto"> Toronto<br>
-            <input type="radio" class="tag" name="right" value="Ottawa"> Ottawa<br>
+            <input type="radio" class="tag" name="question1" value="Ottawa"> Ottawa<br>
             <input type="radio" class="mc" name="question1" value="Winnipeg"> Winnipeg<br>
             <input type="radio" class="mc" name="question1" value="Montreal"> Montreal<br>
         </div>
@@ -42,7 +43,7 @@
                 <input type="radio" class="mc" name="question2" value="Mumbai">Mumbai<br>
                 <input type="radio" class="mc" name="question2" value="Calcutta">Calcutta<br>
                 <input type="radio" class="mc" name="question2" value="Jaipur">Jaipur<br>
-                <input type="radio" class="tag" name="right" value="Delhi">Delhi<br>
+                <input type="radio" class="tag" name="question2" value="Delhi">Delhi<br>
             </div>
             <input id="button" type="button" class="btn action-button" value="submit">
                
@@ -52,7 +53,7 @@
         <div class="field q3field">
                 <h2 class="fs-title"> What is the Capital of USA</h2>
             <div class="container">
-                <input type="radio" class="tag" name="right" value="WashingtonDC">WashingtonDC<br>
+                <input type="radio" class="tag" name="question3" value="WashingtonDC">WashingtonDC<br>
                 <input type="radio" class="mc" name="question3" value="Newyork">Newyork<br>
                 <input type="radio" class="mc" name="question3" value="California">California<br>
                 <input type="radio" class="mc" name="question3" value="Orlando">Orlando<br>
@@ -67,7 +68,7 @@
         <div class="container">
             <input type="radio" class="mc" name="question4" value="Amsterdam">Amsterdam<br>
             <input type="radio" class="mc" name="question4" value="Lyon">Lyon<br>
-            <input type="radio" class="tag" name="right" value="Paris">Paris<br>
+            <input type="radio" class="tag" name="question4" value="Paris">Paris<br>
             <input type="radio" class="mc" name="question4" value="Rome">Rome<br>
         </div>
             <input id="button" type="button" class="btn action-button" value="submit">
@@ -83,7 +84,8 @@
         </ul>
     
     </form>
-    <div class="victory" ></div>
+    <div class="victory  circleBase type1"></div>
+    <div class="loss  circleBase type2"></div>
     <!-- Script -->
     <script type="text/javascript" src="./assets/javascript/app.js"></script>
 </body>

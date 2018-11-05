@@ -1,4 +1,5 @@
 var correct = 0;
+var lost = 0;
 var animating;
 var operand = 0;
 var useruserAnswer;
@@ -32,7 +33,9 @@ function decrement(){
     if(time<=0){
 		clearInterval(setTime);
 		$("form").css("display","none");
+		$newDiv.css("display","block");
 		$newDiv.html("Game Over"+"<br> Your Score is<br>"+correct);
+		$(".start").css("display", "block");
     }
 }
     // to input values when the user clicks on the radio button
@@ -57,6 +60,7 @@ $(".start").on("click", function(){
 
     //when submit button is clicked
 $(".btn").on("click", function(){
+	$newDiv.css("display","block");
     console.log(userAnswer);
     $("body").append($newDiv);   
         if(qClass==="tag"){
@@ -65,17 +69,21 @@ $(".btn").on("click", function(){
             console.log(correct);
 			$newDiv.html('<b>' + "Correct answer" + '</b>');
 			$(".victory").css({"width":(correct*20), "display":"block" }) 
+			$(".victory").html("<h3>"+correct+"<br>R"+"</h3>")
 			
             }
 	    else
 		{
+			lost++;
 			$newDiv.html(userAnswer + " Is Wrong answer " +"<br/>Correct answer is:<br>"+ correctAnswer);
+			$(".loss").css({"width":(lost*20), "display":"block" }) 
+			$(".loss").html("<h3>"+lost+"<br>W"+"</h3>")
         }
 });
 
     //when next is pressed
 $(".next").on("click", function(){
-    $newDiv.html(" ");
+    $newDiv.css("display","none");
     operand++;
     console.log(operand);
     console.log("clicked");

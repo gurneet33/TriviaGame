@@ -5,7 +5,7 @@
 
 body {
     background-image: url("../images/sky.jpg");
-    /* background-repeat: no-repeat; */
+    font-family: 'Yeon Sung', cursive;
     background-size: 100%;
     color: white;
 }
@@ -46,10 +46,6 @@ h1 {
     text-align: left;
 }
 
-/* just show the first fieldset */
-/* #quiz fieldset:not(:first-of-type){
-    display: none;
-} */
 #quiz .action-button {
     width: 100px;
     background: rgb(132, 219, 248);
@@ -68,6 +64,11 @@ h1 {
     text-transform: uppercase;
     color: #a5aeb8;
     margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 30px;
+    font-weight: 200;
 }
 
 /* progressbar */
@@ -93,13 +94,13 @@ h1 {
     /* border: 2px solid lightblue; */
     background-color: black;
     padding: 0;
-    width: auto;
+    width: 60px;
     
 }
 
 span {
     border: 2px solid lightblue;
-    width: 27px;
+    width: 40px;
 }
 
 #timer {
@@ -112,14 +113,37 @@ span {
     text-align: center;
     padding-top: 15px;
 }
-.victory {
-    background-color: aqua; 
+.victory,.loss {
     width: 20px;
     height: 20px;
     padding: 2% 0;
     margin-bottom: 2%;
     position: absolute;
-    top: 1%;
-    left:65%;
+    top: 8%;
     display: none;
+    text-align: center;
  }
+.victory {
+    left:75%;
+    color: #272829;
+ }
+ .loss{
+    left:90%;
+    color: white;
+ }
+ .circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); 
+ }
+    .type1{
+        width: 80px;
+        height: 80px;
+        background: rgb(238, 238, 218);
+        border: 3px solid rgb(37, 12, 12);
+    }
+    .type2 {
+        width: 80px;
+        height: 80px;
+        background: rgb(41, 27, 9);
+        border: 3px solid rgb(37, 12, 12);
+    }
